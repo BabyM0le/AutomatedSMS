@@ -1,2 +1,1 @@
-npm install twilio
-npm install dotenv
+NodeJS Application to send SMS to any number. To get started make a file named: '.env' in the main directory with these two lines: "TwilioAccountSid='YOUR_TWILIO_SID'' TwilioAuthToken='YOUR_TWILIO_AUTH_TOKEN'". To run this, you will need to have NodeJS runtime installed with the Twilio and dotenv dependencies. If you have npm installed you can do this by running: 'npm install twilio' and 'npm install dotenv'. Then run 'node main.js'.
