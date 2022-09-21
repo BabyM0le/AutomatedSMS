@@ -1,12 +1,17 @@
-const accountSid = 't';
-const authToken = 't';
+require('dotenv').config()
 
-const client = require('twilio')(accountSid, authToken);
+const accountSid = process.env.TwilioAccountSid
+const authToken = process.env.TwilioAuthToken
 
-client.messages
-    .create({
-        to: '+447466818068',
-        from: '+17179877657',
-        body: 'Test',
-    })
-    .then(message => console.log(message.sid));
+const client = require('twilio')(accountSid, authToken)
+
+function sendSMS(twilioNumber, outGoingNumber, body) {
+    client.messages.create({
+        to: outGoingNumber,
+        from: twilioNumber,
+        body: body,
+    }).then(message => console.log(message.sid))
+}
+
+
+sendSMS('+17179877657', '+447466818068', 'TextBody')
